@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 
 def montecarlo_binominal(s0, strike, maturity, sigma, r, n, sims):
     """
-    Calculates the price of an option call by passing a set of parameters. 
+    Calculates the price of an option call by introducing a set of parameters. 
     - s0: Underlying price at t0.
     - strike: Contract value of the call option.
     - maturity: period of time until the expiration of the contract in annual terms.
@@ -46,6 +46,15 @@ def montecarlo_binominal(s0, strike, maturity, sigma, r, n, sims):
     return call_mc
 
 def montecarlo_difusion(s0,strike,maturity,sigma, r, n, sims):
+    """
+    Calculates the price of an option call by introducing a set of parameters. 
+    - s0: Underlying price at t0.
+    - strike: Contract value of the call option.
+    - maturity: period of time until the expiration of the contract in annual terms.
+    - sigma: estimated constant volatility in annual terms.
+    - r: estimated constant interest rate in annual terms.
+    - sims: number of M simulations of the payoff of the call option.
+    """
     m = r - sigma**2 / 2
     delta = maturity/n
 
